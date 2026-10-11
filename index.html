@@ -157,21 +157,33 @@ html{scrollbar-color:var(--base) var(--bg);caret-color:var(--accent)}
 @media (max-width:460px){.sp{grid-template-columns:48px minmax(0,1fr);gap:14px}.avatar{width:48px;height:48px;font-size:17px}}
 
 /* Registration card */
-.reg{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:28px;box-shadow:0 12px 32px -20px rgba(0,0,0,.4)}
+.reg{position:sticky;top:24px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:28px;box-shadow:0 12px 32px -20px rgba(0,0,0,.4)}
 .reg h2{font-size:1.3rem;margin-bottom:4px}
 .reg .sub{color:var(--muted);font-size:15px;margin-bottom:20px}
 .formframe{position:relative;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--form-bg);margin-bottom:10px}
-.formframe iframe{display:block;width:100%;height:880px;border:0}
+.formframe iframe{display:block;width:100%;height:clamp(480px,calc(100vh - 290px),720px);border:0}
 .formempty{padding:40px 20px;text-align:center;color:var(--muted);font-size:15px;background:var(--bg)}
 .formframe.loading .formempty{position:absolute;inset:0 0 auto;background:transparent}
 .formalt{font-size:14px;color:var(--muted);margin-bottom:18px}
-.calrow{display:grid;gap:8px;margin-bottom:16px}
-.calrow .label{color:var(--muted)}
 .fine{font-size:12px;color:var(--muted)}
+.reg .lead{font-weight:600;color:var(--accent);font-size:15px;margin-bottom:6px}
+.mreg{display:none}
+.mreg .btn{display:block;text-align:center;padding:16px 20px;font-size:17px}
+.mreg small{display:block;color:var(--muted);font-size:13px;margin-top:8px;text-align:center}
+.endcta{border-top:1px solid var(--line);padding-top:40px;display:grid;gap:14px;justify-items:start}
+.endcta h2{margin:0}
+.endcta p{color:var(--muted);max-width:52ch}
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:none;align-items:center;gap:12px;justify-content:space-between;
+  padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:var(--surface);border-top:1px solid var(--line);
+  box-shadow:0 -8px 24px -16px rgba(0,0,0,.35);transform:translateY(110%);transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.mbar.show{transform:none}
+.mbar span{font-family:var(--f-mono);font-size:12px;color:var(--muted);line-height:1.35}
+.mbar .btn{padding:11px 18px;font-size:15px;white-space:nowrap}
+@media (prefers-reduced-motion:reduce){.mbar{transition:none}}
 
 footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);font-size:14px}
 
-@media (max-width:920px){.hero{padding-block:56px 48px;background-position:60% 100%;background-size:auto 70%}.hero-grid{grid-template-columns:minmax(0,1fr);gap:32px}.hero::before{background:linear-gradient(180deg,var(--fog) 0%,var(--fog) 42%,var(--fog-mid) 62%,transparent 82%,var(--bg) 100%)}.main{grid-template-columns:minmax(0,1fr);gap:44px}}
+@media (max-width:920px){.reg{position:static;order:-1}.formframe,.formalt{display:none}.mreg{display:block;margin-bottom:16px}.mbar{display:flex}body{padding-bottom:76px}.hero{padding-block:56px 48px;background-position:60% 100%;background-size:auto 70%}.hero-grid{grid-template-columns:minmax(0,1fr);gap:32px}.hero::before{background:linear-gradient(180deg,var(--fog) 0%,var(--fog) 42%,var(--fog-mid) 62%,transparent 82%,var(--bg) 100%)}.main{grid-template-columns:minmax(0,1fr);gap:44px}}
 @media (max-width:640px){.figs{grid-template-columns:minmax(0,1fr);gap:32px}.meta{grid-template-columns:repeat(2,auto);gap:14px 40px}}
 @media (max-width:460px){.reg{padding:20px}.takeaways li{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
@@ -191,7 +203,7 @@ footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);fo
       <div><dt>Singapore</dt><dd>16:00–16:45</dd></div>
       <div><dt>Length</dt><dd>45 min on Zoom</dd></div>
     </dl>
-    <div class="cta"><a class="btn" href="#register">Register now</a><small>Live only, with Q&amp;A. This session will not be recorded.</small></div>
+    <div class="cta"><a class="btn" href="#register">Register now</a><small>Free · 45 minutes, live with Q&amp;A · Not recorded, so join live to ask yours.</small></div>
    </div>
     <figure class="loadchart" aria-label="Illustration: a site's daily load profile before and after optimisation. Optimised consumption sits below the baseline all day, with the biggest gap overnight when idle equipment is switched off.">
       <figcaption><span class="label">Site load profile · illustrative</span>
@@ -212,7 +224,7 @@ footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);fo
 
 <section class="research" aria-labelledby="researchTitle">
   <div class="wrap">
-    <h2 id="researchTitle">Why energy management matters from now</h2>
+    <h2 id="researchTitle">Why energy management matters now</h2>
     <p class="intro">Most organizations already have energy data. Few can turn it into savings. Our 2025 study with Verdantix found three common challenges:</p>
     <div class="figs">
       <div class="fig"><b>60%</b><div class="meter" aria-hidden="true"><i style="width:60%"></i></div><strong>Integrating legacy systems</strong><span>say fragmented, siloed data systems are the biggest challenge to a digitized approach.</span></div>
@@ -233,10 +245,10 @@ footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);fo
     </section>
 
     <section>
-      <h2>Three things you&rsquo;ll take on</h2>
+      <h2>What you&rsquo;ll take away</h2>
       <ul class="takeaways">
         <li><span class="kind">Whitepaper</span><div><b>ISO 50001 compliance: Energy Management Whitepaper</b><small>A step-by-step guide to an ISO 50001-aligned PDCA cycle: energy review, baselines, action plans and verified savings.</small></div></li>
-        <li><span class="kind">Live demo</span><div><b>Enterprise AI Energy &amp; Carbon Management platform demo</b><small>See multi-brand meter data flow into one layer, then watch AI flag opportunities, rank them on a MACC and verify results against a regression baseline.</small></div></li>
+        <li><span class="kind">Live demo</span><div><b>Enterprise AI Energy &amp; Carbon Management platform demo</b><small>See multi-brand meter data flow into one layer, then watch AI flag opportunities, rank them on a marginal abatement cost curve (MACC) and verify results against a baseline adjusted for weather and production.</small></div></li>
         <li><span class="kind">Free trial</span><div><b>Free trial: SustainX Navi Platform</b><small>Connect one representative site, set a baseline and identify your first savings opportunities before you scale.</small></div></li>
       </ul>
     </section>
@@ -291,28 +303,37 @@ footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);fo
         </article>
       </div>
     </section>
+
+    <section class="endcta" aria-labelledby="endTitle">
+      <h2 id="endTitle">Live only. 27 October, 45 minutes.</h2>
+      <p>150 seats, one live conversation and a demo you can question in real time. The session will not be recorded; everyone with a confirmed seat receives the ISO 50001 whitepaper afterwards.</p>
+      <a class="btn" href="#register">Save your seat</a>
+    </section>
   </main>
 
   <aside class="reg" id="register">
     <h2>Save your seat</h2>
-    <p class="sub">Register below. We'll email your confirmation right away, then your Zoom joining link and reminders before the session. The session is live only and will not be recorded.</p>
+    <p class="lead">Free · takes under a minute</p>
+    <p class="sub">We&rsquo;ll email your confirmation right away, then your Zoom link and reminders before the session.</p>
+    <div class="mreg">
+      <a class="btn" id="mFormLink" target="_blank" rel="noopener" href="#register">Register in 1 minute &rarr;</a>
+      <small>Opens the registration form (Microsoft Forms)</small>
+    </div>
     <div class="formframe">
       <iframe id="msForm" title="Webinar registration form" loading="lazy" allowfullscreen hidden></iframe>
       <p class="formempty" id="formEmpty">The registration form will appear here.</p>
     </div>
     <p class="formalt" id="formAlt" hidden>Form not loading? <a id="formLink" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
-    <div class="calrow" id="calBtns">
-      <span class="label">Add to calendar</span>
-      <div class="btnrow">
-        <a class="btn ghost" id="gcal" target="_blank" rel="noopener">Google</a>
-        <button class="btn ghost" id="icsBtn" type="button">Outlook / Apple (.ics)</button>
-      </div>
-    </div>
-    <p class="fine">Registration is handled by Microsoft Forms. Your details are used only to manage this webinar, as described in the <a href="[privacy policy URL]" target="_blank" rel="noopener">privacy policy</a>.</p>
+    <p class="fine">Registration is handled by Microsoft Forms. Your details are used only to manage this webinar<span id="privacyWrap" hidden>, as described in our <a id="privacyLink" target="_blank" rel="noopener">privacy notice</a></span>.</p>
   </aside>
 </div>
 
 <footer><div class="wrap">Hosted by Delta Electronics with Verdantix · Questions: <a href="mailto:celine.tl.liu@deltaww.com">celine.tl.liu@deltaww.com</a></div></footer>
+
+<div class="mbar" id="mbar" aria-hidden="true">
+  <span>Tue 27 Oct · 08:00 UK<br>16:00 SG · free</span>
+  <a class="btn" href="#register" tabindex="-1">Save your seat</a>
+</div>
 
 <script src="webinar.js"></script>
 </body>
