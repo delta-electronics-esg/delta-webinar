@@ -166,6 +166,7 @@ html{scrollbar-color:var(--base) var(--bg);caret-color:var(--accent)}
 .formframe.loading .formempty{position:absolute;inset:0 0 auto;background:transparent}
 .formalt{font-size:14px;color:var(--muted);margin-bottom:18px}
 .fine{font-size:12px;color:var(--muted)}
+.calrow{display:grid;gap:8px;margin-bottom:16px}.calrow .label{color:var(--muted)}
 .reg .lead{font-weight:600;color:var(--accent);font-size:15px;margin-bottom:6px}
 .mreg{display:none}
 .mreg .btn{display:block;text-align:center;padding:16px 20px;font-size:17px}
@@ -324,6 +325,13 @@ footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);fo
       <p class="formempty" id="formEmpty">The registration form will appear here.</p>
     </div>
     <p class="formalt" id="formAlt" hidden>Form not loading? <a id="formLink" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
+    <div class="calrow">
+      <span class="label">Add to calendar</span>
+      <div class="btnrow">
+        <a class="btn ghost" href="https://outlook.office.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;subject=Closing%20the%20Hardware-Software%20Gap%20for%20ISO%2050001-Ready%20Energy%20Management&amp;startdt=2026-10-27T08%3A00%3A00Z&amp;enddt=2026-10-27T08%3A45%3A00Z&amp;body=Live%20webinar%20by%20Delta%20Electronics%20with%20Verdantix.%20Your%20Zoom%20joining%20link%20will%20be%20emailed%20to%20you%20before%20the%20session.&amp;location=Zoom" target="_blank" rel="noopener">Outlook</a>
+        <a class="btn ghost" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Closing%20the%20Hardware-Software%20Gap%20for%20ISO%2050001-Ready%20Energy%20Management&amp;dates=20261027T080000Z/20261027T084500Z&amp;details=Live%20webinar%20by%20Delta%20Electronics%20with%20Verdantix.%20Your%20Zoom%20joining%20link%20will%20be%20emailed%20to%20you%20before%20the%20session.&amp;location=Zoom" target="_blank" rel="noopener">Google</a>
+      </div>
+    </div>
     <p class="fine">Registration is handled by Microsoft Forms. Your details are used only to manage this webinar<span id="privacyWrap" hidden>, as described in our <a id="privacyLink" target="_blank" rel="noopener">privacy notice</a></span>.</p>
   </aside>
 </div>
