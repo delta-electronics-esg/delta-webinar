@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Closing the Hardware-Software Gap for ISO 50001-Ready Energy Management | Webinar</title>
-<meta name="description" content="A 45-minute webinar with Delta and Verdantix on closing the hardware-software gap for ISO 50001-ready energy management: one data layer, AI opportunity detection, MACC prioritisation and a live platform demo.">
+<meta name="description" content="A 45-minute webinar with Delta and Verdantix on closing the hardware-software gap for ISO 50001-ready energy management: one data layer, AI opportunity detection, MACC prioritisation and a platform demo.">
 <meta property="og:title" content="Closing the Hardware-Software Gap for ISO 50001-Ready Energy Management">
-<meta property="og:description" content="Free 45-minute webinar · Tue 27 Oct 2026 · 08:00 UK / 16:00 SG · Live demo and Q&amp;A">
+<meta property="og:description" content="Free 45-minute webinar · Tue 27 Oct 2026 · 08:00 UK / 16:00 SG · Demo and Q&amp;A">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://delta-electronics-esg.github.io/delta-webinar/assets/og-image.jpg">
+<meta property="og:image" content="https://delta-electronics-esg.github.io/delta-webinar/assets/og-image-v2.jpg">
 <meta property="og:url" content="https://delta-electronics-esg.github.io/delta-webinar/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232f5a48'/%3E%3Cpath d='M16 6c-5 5-7 9-7 13a7 7 0 0 0 14 0c0-4-2-8-7-13z' fill='%23eef1ee'/%3E%3Cpath d='M17 13l-4 7h3l-1 5 4-7h-3z' fill='%23b8892b'/%3E%3C/svg%3E">
@@ -67,6 +67,8 @@ html{scrollbar-color:var(--base) var(--bg);caret-color:var(--accent)}
   @keyframes drift{from{transform:translateX(-6%)}to{transform:translateX(6%)}}}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:center}
 .hero-grid>div{min-width:0}
+.logos{display:flex;align-items:center;gap:14px;margin-bottom:26px}.logos img{display:block;height:30px;width:auto}.logos img.vx{height:20px}.logos span{color:var(--muted);font-size:18px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .logos img.vx{filter:brightness(0) invert(1)}}:root[data-theme="dark"] .logos img.vx{filter:brightness(0) invert(1)}
 .byline{color:var(--accent);font-weight:600;font-size:15px;margin-top:-6px;margin-bottom:18px}
 .hero h1{font-family:var(--f-display);font-weight:500;font-size:clamp(2.1rem,4.8vw,3.5rem);line-height:1.08;letter-spacing:-.015em;margin-block:0 18px}
 .hero h1 em{font-style:normal;font-weight:600;color:var(--accent)}
@@ -195,6 +197,7 @@ footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);fo
 <header class="hero">
   <div class="wrap hero-grid">
    <div>
+    <div class="logos"><img src="assets/logos/delta-logo.png" alt="Delta Electronics" width="129" height="36"><span aria-hidden="true">&times;</span><img class="vx" src="assets/logos/verdantix-logo.png" alt="Verdantix" width="137" height="22"></div>
     <h1>Closing the Hardware&#8209;Software Gap for <em>ISO&nbsp;50001&#8209;Ready</em> Energy Management</h1>
     <p class="byline">A free live webinar from Delta Electronics with Verdantix</p>
     <p class="lede">Meters, controllers and building systems produce the data. Software has to turn it into an ISO 50001 cycle that finds, prioritises and proves savings. Learn how to connect the two across every site.</p>
@@ -241,7 +244,7 @@ footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);fo
       <h2>About this webinar</h2>
       <div class="body">
         <p>Energy management starts with hardware: meters, chillers, compressors, drives and building systems. A single site often runs equipment from several brands on different communication protocols, and the numbers still end up in a monthly spreadsheet. The software meant to run ISO 50001 never sees a complete, current picture, so savings are hard to find and harder to prove.</p>
-        <p>In this session, Dayann Charles of Verdantix talks with Karthik Arunachalam of Delta Electronics about closing that gap: <strong>bringing multi-brand meters and protocols into one data layer, running the ISO 50001 Plan-Do-Check-Act cycle on top of it, and using AI to find, prioritise and verify savings across sites and countries.</strong> We close with a live look at the platform and how Delta, its first user, applied it across its own sites.</p>
+        <p>In this session, Dayann Charles of Verdantix talks with Karthik Arunachalam of Delta Electronics about closing that gap: <strong>bringing multi-brand meters and protocols into one data layer, running the ISO 50001 Plan-Do-Check-Act cycle on top of it, and using AI to find, prioritise and verify savings across sites and countries.</strong> We close with a look at the platform and how Delta, its first user, applied it across its own sites.</p>
       </div>
     </section>
 
@@ -249,7 +252,7 @@ footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);fo
       <h2>What you&rsquo;ll take away</h2>
       <ul class="takeaways">
         <li><span class="kind">Whitepaper</span><div><b>ISO 50001 compliance: Energy Management Whitepaper</b><small>A step-by-step guide to an ISO 50001-aligned PDCA cycle: energy review, baselines, action plans and verified savings.</small></div></li>
-        <li><span class="kind">Live demo</span><div><b>Enterprise AI Energy &amp; Carbon Management platform demo</b><small>See multi-brand meter data flow into one layer, then watch AI flag opportunities, rank them on a marginal abatement cost curve (MACC) and verify results against a baseline adjusted for weather and production.</small></div></li>
+        <li><span class="kind">Demo</span><div><b>Enterprise AI Energy &amp; Carbon Management platform demo</b><small>See multi-brand meter data flow into one layer, then watch AI flag opportunities, rank them on a marginal abatement cost curve (MACC) and verify results against a baseline adjusted for weather and production.</small></div></li>
         <li><span class="kind">Free trial</span><div><b>Free trial: SustainX</b><small>Connect one representative site, set a baseline and identify your first savings opportunities before you scale.</small></div></li>
       </ul>
     </section>
@@ -269,7 +272,7 @@ footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);fo
                 <li>What&rsquo;s the functionality and architecture of an ideal EMS?</li>
                 <li>How to leverage AI to enable energy-management capability?</li>
               </ol></td><td class="d">25 min</td></tr>
-            <tr><td><b>SustainX Demo + Success Story</b><small>Live demo and Delta&rsquo;s own journey</small></td><td class="d">5 min</td></tr>
+            <tr><td><b>SustainX Demo + Success Story</b><small>Demo and Delta&rsquo;s own journey</small></td><td class="d">5 min</td></tr>
             <tr><td><b>Live Q&amp;A</b><small>Your questions, plus how to get the whitepaper, a demo and the free trial.</small></td><td class="d">10 min</td></tr>
           </tbody>
         </table>
