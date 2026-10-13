@@ -10,7 +10,7 @@ const CONFIG = {
 
   EVENT: {
     // 活動日期（頁面上顯示用）
-    dateLabel: "Tue 27 Oct 2026"
+    dateLabel: "Tue 3 Nov 2026"
   }
 };
 
