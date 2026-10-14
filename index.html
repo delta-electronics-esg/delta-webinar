@@ -203,6 +203,13 @@ footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);fo
 .hero .btn:hover{box-shadow:0 6px 18px -8px rgba(127,211,196,.7)}
 @media (max-width:920px){.hero{background-position:70% 50%;background-size:cover;padding-block:56px 48px}
   .hero::before{background:linear-gradient(180deg,rgba(5,20,32,.95) 0%,rgba(5,20,32,.92) 60%,rgba(5,20,32,.85) 100%)}}
+
+/* Partner logos: top-right of the hero, logos large, the × small */
+.hero .wrap{position:relative}
+.hero .logos{position:absolute;top:-60px;right:20px;margin:0;gap:12px}
+.hero .logos img{height:44px}.hero .logos img.vx{height:30px}
+.hero .logos span{font-size:14px;opacity:.85}
+@media (max-width:920px){.hero .logos{position:static;justify-content:flex-end;margin:-24px 0 24px}.hero .logos img{height:34px}.hero .logos img.vx{height:23px}}
 </style>
 </head>
 <body>
@@ -210,7 +217,7 @@ footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);fo
 <header class="hero">
   <div class="wrap hero-grid">
    <div>
-    <div class="logos"><img src="assets/logos/delta-logo.png" alt="Delta Electronics" width="129" height="36"><span aria-hidden="true">&times;</span><img class="vx" src="assets/logos/verdantix-logo.png" alt="Verdantix" width="137" height="22"></div>
+    <div class="logos"><img src="assets/logos/delta-logo.png" alt="Delta Electronics" width="158" height="44"><span aria-hidden="true">&times;</span><img class="vx" src="assets/logos/verdantix-logo.png" alt="Verdantix" width="183" height="30"></div>
     <h1>Closing the Hardware&#8209;Software Gap for <em>ISO&nbsp;50001&#8209;Ready</em> Energy Management</h1>
     <p class="byline">A free live webinar from Delta Electronics with Verdantix</p>
     <p class="lede">Your meters produce the data. Learn how software turns it into proven ISO 50001 savings across every site.</p>
