@@ -11,7 +11,7 @@
 <meta property="og:image" content="https://delta-electronics-esg.github.io/delta-webinar/assets/og-image-v4.jpg">
 <meta property="og:url" content="https://delta-electronics-esg.github.io/delta-webinar/">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232f5a48'/%3E%3Cpath d='M16 6c-5 5-7 9-7 13a7 7 0 0 0 14 0c0-4-2-8-7-13z' fill='%23eef1ee'/%3E%3Cpath d='M17 13l-4 7h3l-1 5 4-7h-3z' fill='%23b8892b'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230087dc'/%3E%3Cpath d='M16 6c-5 5-7 9-7 13a7 7 0 0 0 14 0c0-4-2-8-7-13z' fill='%23eef1ee'/%3E%3Cpath d='M17 13l-4 7h3l-1 5 4-7h-3z' fill='%23b8892b'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -210,6 +210,45 @@ footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);fo
 .hero .logos img{height:44px}.hero .logos img.vx{height:26px}
 .hero .logos .x{display:block;flex:none;width:10px;height:10px;margin-bottom:9px;color:var(--muted)}
 @media (max-width:920px){.hero .logos{position:static;justify-content:flex-end;margin:-24px 0 24px;gap:12px}.hero .logos img{height:34px}.hero .logos img.vx{height:20px}.hero .logos .x{width:8px;height:8px;margin-bottom:7px}}
+
+/* ===== Delta CI 2026 colour version =====
+   Primary: Delta Blue #0087DC, Aqua Blue #64D7D7, Grass Green #B9EB5F.
+   Blue range (PMS 3005C / 300C / 301C / 302C) for text-safe accents and the dark hero; CI grays for neutrals.
+   Delta Blue itself is 3.9:1 on white, so text and button fills use PMS 3005C/300C to stay AA. */
+:root{
+  --bg:#f0f0f0; --surface:#ffffff; --ink:#000000; --muted:#414141; --line:#c8c8c8;
+  --accent:#005eb8; --accent-ink:#ffffff; --accent-soft:#e3f1fb;
+  --signal:#0087dc; --signal-ink:#005eb8; --signal-soft:rgba(100,215,215,.32); --base:#969696;
+  --fog:rgba(240,240,240,.94); --fog-mid:rgba(240,240,240,.62); --glass:rgba(255,255,255,.72);
+  --d-blue:#0087dc; --d-aqua:#64d7d7; --d-green:#b9eb5f; --d-navy:#003b5c;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0b1620; --surface:#10202d; --ink:#f0f0f0; --muted:#c8c8c8; --line:#2a3b48;
+  --accent:#64d7d7; --accent-ink:#00283f; --accent-soft:#12303d; --signal:#64d7d7; --signal-ink:#64d7d7; --base:#646464}}
+:root[data-theme="dark"]{
+  --bg:#0b1620; --surface:#10202d; --ink:#f0f0f0; --muted:#c8c8c8; --line:#2a3b48;
+  --accent:#64d7d7; --accent-ink:#00283f; --accent-soft:#12303d; --signal:#64d7d7; --signal-ink:#64d7d7; --base:#646464}
+.btn{background:#0077c8}
+.btn.ghost{background:transparent}
+/* Hero on PMS 302C navy, accents in Aqua Blue */
+.hero{--accent:#64d7d7;--accent-ink:#00283f;--accent-soft:rgba(100,215,215,.16);background-color:var(--d-navy)}
+.hero .btn{background:var(--d-aqua);color:#00283f}
+.hero::before{background:linear-gradient(90deg,#003b5c 0%,rgba(0,59,92,.96) 38%,rgba(0,59,92,.78) 58%,rgba(0,59,92,.45) 100%),linear-gradient(0deg,rgba(0,40,63,.6) 0%,transparent 30%)}
+@media (max-width:920px){.hero::before{background:linear-gradient(180deg,rgba(0,59,92,.95) 0%,rgba(0,59,92,.92) 60%,rgba(0,59,92,.86) 100%)}}
+/* Progression Bar: Delta Blue → Aqua → Green, under the hero and on the registration card */
+.hero::after{display:block;content:"";position:absolute;inset:auto 0 0 0;height:6px;z-index:1;opacity:1;animation:none;
+  background:linear-gradient(90deg,var(--d-blue) 0 60%,var(--d-aqua) 60% 80%,var(--d-green) 80% 100%)}
+.reg{border-top:0;position:sticky;overflow:hidden}
+.reg::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--d-blue) 0 60%,var(--d-aqua) 60% 80%,var(--d-green) 80% 100%)}
+@media (max-width:920px){.reg{position:relative}}
+/* Research meters, agenda bar, tags */
+.meter i{background:var(--d-blue)}
+.fig:nth-child(2) .meter i{background:#0077c8}
+.fig:nth-child(3) .meter i{background:#005eb8}
+.timebar i{background:var(--d-blue);opacity:1!important}
+.timebar i:nth-child(2){background:#005eb8}.timebar i:nth-child(3){background:var(--d-aqua)}.timebar i:nth-child(4){background:var(--d-green)}
+.takeaways .kind{color:#005eb8;background:#e3f1fb}
+.mbar .btn{background:#0077c8}
 </style>
 </head>
 <body>
